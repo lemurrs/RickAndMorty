@@ -1,0 +1,8 @@
+.Card__info{
+    display: flex;
+    flex-direction: column;
+}
+.Card{
+    background-color: green;
+    width: 200px;
+}

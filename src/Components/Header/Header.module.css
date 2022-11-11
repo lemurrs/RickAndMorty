@@ -1,0 +1,22 @@
+.Header{
+    min-height: 6rem;
+    background-color: white;
+    box-shadow: -2px 0 8px 2px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2.6rem;
+
+}
+.Header__nav>a{
+    font-family: RickMorty,sans-serif;
+    margin-right: 1.5rem;
+    font-weight: 700;
+    font-size: 1.8rem;
+    line-height: 2.1rem;
+
+}
+.Header__content{
+    min-height: 6rem;
+    display: flex;
+    align-items: center;
+    padding-left: 1rem;
+    justify-content: space-between;
+}

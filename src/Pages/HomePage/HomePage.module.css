@@ -1,0 +1,15 @@
+.HomePage__RickAndMorty{
+    text-align: center;
+    margin-bottom: 1.6rem;
+}
+.HomePage__cards{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 2rem;
+    margin-bottom: 4.8rem;
+}
+.HomePage__paginator{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 4.4rem;
+}
