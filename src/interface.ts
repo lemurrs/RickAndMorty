@@ -37,5 +37,32 @@ export interface IAllCharacters {
     }
 
 
+export interface IAllEpisodes {
+    info: EInfo;
+    results: EEpisode[];
+}
+export interface EInfo {
+    count: number;
+    pages: number;
+    next: string;
+    prev?: any;
+}
+
+export interface EEpisode {
+    id: number;
+    name: string;
+    air_date: string;
+    episode: string;
+    characters: string[];
+    url: string;
+    created: Date;
+}
+
+
+
+
+
+
+
 
 
