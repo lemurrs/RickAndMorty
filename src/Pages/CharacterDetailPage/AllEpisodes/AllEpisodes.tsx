@@ -7,7 +7,7 @@ const AllEpisodes=({episodes}:{episodes:string[]})=>{
         {episodes.length < 5 ? episodes.map(el =>
             <Episode key={Number(el.replace(/[^0-9]/g, ''))}
                      id={Number(el.replace(/[^0-9]/g, ''))}/>
-        ) : episodes.slice(1, 6).map(el =>
+        ) : episodes.slice(0, 5).map(el =>
             <Episode key={Number(el.replace(/[^0-9]/g, ''))}
                      id={Number(el.replace(/[^0-9]/g, ''))}/>
         )}</div>)

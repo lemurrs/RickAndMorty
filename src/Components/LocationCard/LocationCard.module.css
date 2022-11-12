@@ -1,0 +1,23 @@
+.LocationCard {
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2), 0 3px 4px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.14);
+    border-radius: 10px;
+}
+.LocationCard img{
+    border-radius: 10px 10px 0 0
+}
+.LocationCard__info{
+    text-align: center;
+    padding:1.4rem 1.6rem;
+}
+.info__name{
+    font-weight: 700;
+    font-size: 2rem;
+    color: var(--CardNameColor);
+    margin-bottom: 1rem;
+}
+.info__species{
+    margin: 0;
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: var(--CardDescColor);
+}

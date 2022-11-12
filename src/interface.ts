@@ -60,6 +60,31 @@ export interface EEpisode {
 
 
 
+    export interface Info {
+        count: number;
+        pages: number;
+        next: string;
+        prev?: any;
+    }
+
+    export interface ILocation {
+        id: number;
+        name: string;
+        type: string;
+        dimension: string;
+        residents: string[];
+        url: string;
+        created: Date;
+    }
+
+    export interface IAllLocations {
+        info: Info;
+        results: ILocation[];
+    }
+
+
+
+
 
 
 
