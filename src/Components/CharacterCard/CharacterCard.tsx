@@ -8,7 +8,12 @@ const CharacterCard= ({data}:{data:any})=>{
         <Link to={`/character/${data.id}`}>
             <img src={data.image} alt={''} style={{width:'100%'}}/>
         </Link>
-        <Typography sx={{textAlign:'center'}}>{data.name}</Typography>
+        <div className={c.CharacterCard__info}>
+            <p className={c.info__name}>{data.name}</p>
+            <p className={c.info__species}>{data.species}</p>
+        </div>
+
+
     </div>)
 }
 export default CharacterCard

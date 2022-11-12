@@ -1,3 +1,19 @@
 .Footer{
-    margin-bottom: 3rem;
+    margin-top: 6rem;
+    margin-bottom: 6rem;
+    color: #02AFC5;
+    animation: glow 2s ease-in-out infinite alternate;
+    backface-visibility: hidden;
+
+
+}
+@keyframes glow {
+
+
+    0%{
+        text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000, 0 0 10px #7fff4d, 0 0 20px #7fff4d, 0 0 30px #7fff4d, 0 0 40px #7fff4d, 0 0 50px #7fff4d
+    }
+    100%{
+        text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000, 0 0 20px #fff, 0 0 30px #7fff4d, 0 0 40px #7fff4d, 0 0 50px #7fff4d, 0 0 60px #7fff4d, 0 0 70px #7fff4d, 0 0 80px #7fff4d;
+    }
 }

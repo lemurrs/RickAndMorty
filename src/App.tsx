@@ -15,6 +15,7 @@ function App() {
 
 <Routes>
     <Route path={'/'} element={<HomePage/>} />
+    <Route path={'/characters'} element={<HomePage/>} />
     <Route path={'/character/:id'} element={<CharacterDetailPage/>} />
     <Route path={'*'} element={<p>40000000000000000000004</p>} />
 </Routes>

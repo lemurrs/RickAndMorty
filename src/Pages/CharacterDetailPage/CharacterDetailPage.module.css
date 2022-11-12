@@ -3,6 +3,62 @@
     flex-direction: column;
 }
 .Card{
-    background-color: green;
-    width: 200px;
+    position: relative;
+}
+.Card  .Card__info{
+    display: flex;
+    justify-content: center;
+}
+
+.Card__BackButton{
+    cursor: pointer;
+    position: absolute;
+    left: 0;
+    top: 4.2rem;
+    display: flex;
+    align-items: center;
+    font-family: 'Karla',sans-serif;
+    font-weight: 700;
+    font-size: 1.8rem;
+    line-height: 2.1rem;
+}
+.Card__extraInfo{
+    display: grid;
+    grid-template-columns: 10% 1fr 1fr 10%;
+    gap:2rem;
+}
+.Card__extraInfo p{
+    border-bottom: 1px solid var(--CardDescColor);
+    font-size: 1.6rem;
+}
+.Card__extraInfo h3{
+   color: var(--CardDescColor);
+    font-weight: 500;
+    font-size: 2rem;
+}
+.extraInfo__informations{
+grid-column: 2/3;
+
+}
+.extraInfo__episodes{
+    grid-column: 3/4;
+
+}
+.Card__extraInfo b{
+    color: var(--RobotoTitleColor);
+}
+.Card__extraInfo p{
+    color:var(--CharacterDetailDescriptionColor)
+}
+.Card__mainInfo{
+    font-weight: 400;
+    font-size: 48px;
+    text-align: center;
+}
+.Card__mainInfo img{
+    border-radius: 100%;
+}
+.Card__mainInfo p{
+color: var(--RobotoTitleColor);
+    margin: 0;
 }

@@ -5,8 +5,19 @@
   font-family: 'RickMorty';
   src: url("Assets/fonts/get_schwifty.ttf") format('truetype');
 }
-body {
+@font-face {
+  font-family: 'Karla';
+  src: url("Assets/fonts/Karla-Bold.ttf") format('truetype');
+}
+html{
   font-size: 62.5%;
+}
+body {
+  --RobotoTitleColor:#081F32;
+  --CardNameColor:rgba(0, 0, 0, 0.87);
+  --CardDescColor:rgba(0, 0, 0, 0.6);
+  --CharacterDetailDescriptionColor:#6E798C;
+
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',

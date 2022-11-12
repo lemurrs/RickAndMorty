@@ -23,8 +23,8 @@ export function HomePage(){
                 ))}
             </div>
             <div className={c.HomePage__paginator}>
-                {page>1 && <Button variant="contained" size={'large'} onClick={()=>{setPage(--page)}}>Prev</Button>}
-                <Button variant="contained" size={'large'} onClick={()=>{setPage(++page)}}>Next</Button>
+                {page>1 && <Button variant="contained" size={'large'} sx={{fontSize:'2rem',fontFamily:'RickMorty',}} onClick={()=>{setPage(--page)}}>Prev</Button>}
+                {page<42 && <Button variant="contained" size={'large'} sx={{fontSize:'2rem', fontFamily:'RickMorty'}} onClick={()=>{setPage(++page)}}>Next</Button>}
             </div>
 
         </Container>
