@@ -1,3 +1,8 @@
+input:focus,
+input:active{
+    border: none;
+    outline: none;
+}
 .HomePage__RickAndMorty{
     text-align: center;
     margin-bottom: 1.6rem;
@@ -12,4 +17,25 @@
     display: flex;
     justify-content: space-around;
     margin-bottom: 4.4rem;
+}
+.HomePage__filter{
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(4,1fr);
+    margin-bottom: 6.1rem;
+}
+.HomePage__filter input:first-child{
+background: url("../../Assets/imgs/Loupe.png") no-repeat scroll 5%;
+    padding-left: 5rem;
+
+
+
+}
+.HomePage__filter>input{
+    font-size: 1.6rem;
+    padding-left: 1.4rem;
+    height: 5.6rem;
+    border-radius: 1rem;
+    border: 1px solid grey;
+
 }

@@ -1,8 +1,9 @@
 import React from "react";
 import {Link} from "react-router-dom";
 import c from './CharacterCard.module.css'
+import {ICharacter} from "../../interface";
 
-const CharacterCard= ({data}:{data:any})=>{
+const CharacterCard= ({data}:{data:ICharacter})=>{
     return(<div className={c.CharacterCard}>
         <Link to={`/character/${data.id}`}>
             <img src={data.image} alt={''} style={{width:'100%'}}/>

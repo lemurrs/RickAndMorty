@@ -13,6 +13,7 @@ export function CharacterDetailPage() {
     if (isLoading) return <h1>Lodink.......</h1>
     if (error) return <h1>Chtoto posho ne tak</h1>
     if (!Data) return <h1>Empty Data</h1>
+
     //Status Circle Color Logic
     const isAlive = Data.status === 'Alive' ? <Brightness1RoundedIcon sx={{color: 'lightgreen'}}/>
         : Data.status === 'unknown' ? <Brightness1RoundedIcon sx={{color: 'gray'}}/>

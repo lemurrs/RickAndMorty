@@ -1,8 +1,8 @@
 import React from "react";
 import c from './LocationCard.module.css'
+import {ILocation} from "../../interface";
 
-const LocationCard= ({data}:{data:any})=>{
-    console.log(data)
+const LocationCard= ({data}:{data:ILocation})=>{
     return(<div className={c.LocationCard}>
         <div className={c.LocationCard__info}>
             <p className={c.info__name}>{data.name}</p>

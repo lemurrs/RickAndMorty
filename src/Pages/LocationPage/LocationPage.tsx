@@ -8,7 +8,6 @@ import LocationCard from "../../Components/LocationCard/LocationCard";
 const LocationPage = ()=>{
     let [page,setPage]=useState(1)
     const {data: allLocations, isLoading, error} = useGetAllLocationsQuery(page)
-    console.log(allLocations)
     if(isLoading) return <h1>Lodink.......</h1>
     if(error) return <h1>Chtoto posho ne tak</h1>
     return(<div className={c.HomePage}>
