@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/RickAndMorty/static/css/main.87a0537d.css",
-    "main.js": "/RickAndMorty/static/js/main.62689c8c.js",
+    "main.js": "/RickAndMorty/static/js/main.2e720446.js",
     "static/media/RickAndMorty.png": "/RickAndMorty/static/media/RickAndMorty.7025a60a8397a5bdc91d.png",
     "static/media/Karla-Bold.ttf": "/RickAndMorty/static/media/Karla-Bold.623c61b6f8c6529800b2.ttf",
     "static/media/get_schwifty.ttf": "/RickAndMorty/static/media/get_schwifty.c3d1dfc692e3547fed16.ttf",
     "index.html": "/RickAndMorty/index.html",
     "main.87a0537d.css.map": "/RickAndMorty/static/css/main.87a0537d.css.map",
-    "main.62689c8c.js.map": "/RickAndMorty/static/js/main.62689c8c.js.map"
+    "main.2e720446.js.map": "/RickAndMorty/static/js/main.2e720446.js.map"
   },
   "entrypoints": [
     "static/css/main.87a0537d.css",
-    "static/js/main.62689c8c.js"
+    "static/js/main.2e720446.js"
   ]
 }
