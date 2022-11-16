@@ -9,7 +9,7 @@ input:active{
 }
 .HomePage__cards{
     display: grid;
-    grid-template-columns: repeat(4,1fr);
+    grid-template-columns: repeat(4,minmax(min-content,1fr));
     gap: 2rem;
     margin-bottom: 4.8rem;
 }
@@ -21,7 +21,7 @@ input:active{
 .HomePage__filter{
     display: grid;
     gap: 2rem;
-    grid-template-columns: repeat(4,1fr);
+    grid-template-columns: repeat(4,minmax(min-content,1fr));
     margin-bottom: 6.1rem;
 }
 .HomePage__filter input:first-child{
@@ -31,11 +31,39 @@ background: url("../../Assets/imgs/Loupe.png") no-repeat scroll 5%;
 
 
 }
+
 .HomePage__filter>input{
     font-size: 1.6rem;
     padding-left: 1.4rem;
     height: 5.6rem;
     border-radius: 1rem;
     border: 1px solid grey;
+    width: 100%;
+
+}
+@media screen and (max-width: 877px) {
+    .HomePage__filter{
+        grid-template-columns: repeat(2,minmax(min-content,1fr));
+    }
+}
+@media screen and (max-width: 649px){
+    .HomePage__RickAndMorty img{
+        width: 80%;
+    }
+    .HomePage__cards{
+        grid-template-columns: repeat(3,minmax(min-content,1fr));
+        gap: 1rem;
+    }
+}
+@media screen and (max-width: 440px){
+    .HomePage__filter>input{
+        font-size: 1.2rem;
+    }
+    .HomePage__filter input:first-child{
+        padding-left: 3rem;
+    }
+    .HomePage__cards{
+        grid-template-columns: 1fr 1fr;
+    }
 
 }

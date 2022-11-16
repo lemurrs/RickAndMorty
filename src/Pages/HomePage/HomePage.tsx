@@ -1,4 +1,4 @@
-import React, {ReactEventHandler, useEffect, useState} from "react";
+import React, {useState} from "react";
 import { useGetAllCharactersQuery} from "../../store/api/characters";
 import CharacterCard from "../../Components/CharacterCard/CharacterCard";
 import RickAndMorty from '../../Assets/imgs/RickAndMorty.png'

@@ -20,3 +20,9 @@
     padding-left: 1rem;
     justify-content: space-between;
 }
+@media screen and (max-width: 440px){
+    .Header__nav>a{
+        font-size: 1.3rem;
+    }
+
+}
