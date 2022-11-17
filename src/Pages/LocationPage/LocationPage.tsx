@@ -1,6 +1,6 @@
 import React, {useState} from "react";
-import c from '../HomePage/HomePage.module.css'
-import RickAndMorty from "../../Assets/imgs/RickAndMorty.png";
+import '../../Assets/css/CardCss.css'
+import c from './LocationPage.module.css'
 import {Button, Container} from "@mui/material";
 import {useGetAllLocationsQuery} from "../../store/api/characters";
 import LocationCard from "../../Components/LocationCard/LocationCard";
@@ -10,25 +10,19 @@ const LocationPage = ()=>{
     const {data: allLocations, isLoading, error} = useGetAllLocationsQuery(page)
     if(isLoading) return <h1>Lodink.......</h1>
     if(error) return <h1>Chtoto posho ne tak</h1>
-    return(<div className={c.HomePage}>
-        <div className={c.HomePage__RickAndMorty}>
-            <img src={RickAndMorty} alt={'rickmorty'}/>
-        </div>
+    return(<div className={c.LocationPage}>
         <Container maxWidth={'lg'}>
-
-            <div className={c.HomePage__cards}>
+            <div className={`CardGallery ${c.LocationCards}`}>
                 {allLocations?.results.map(locationData=>(
                     <LocationCard key = {locationData.id}
                                    data={locationData}
                     />
                 ))}
             </div>
-            <div className={c.HomePage__paginator}>
+            <div className={c.LocationPage__paginator}>
                 {page>1 && <Button variant="contained" size={'large'} sx={{fontSize:'2rem',fontFamily:'RickMorty',}} onClick={()=>{setPage(--page)}}>Prev</Button>}
                 {page<6 && <Button variant="contained" size={'large'} sx={{fontSize:'2rem', fontFamily:'RickMorty'}} onClick={()=>{setPage(++page)}}>Next</Button>}
             </div>
-
-
         </Container>
     </div>)
 }

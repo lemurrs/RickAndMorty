@@ -1,6 +1,6 @@
 import React, {useState} from "react";
+import '../../Assets/css/CardCss.css'
 import c from '../HomePage/HomePage.module.css'
-import RickAndMorty from "../../Assets/imgs/RickAndMorty.png";
 import {Button, Container} from "@mui/material";
 import {useGetAllEpisodesQuery} from "../../store/api/characters";
 import EpisodeCard from "../../Components/EpisodeCard/EpisodeCard";
@@ -11,12 +11,9 @@ const EpisodePage = ()=>{
     if(isLoading) return <h1>Lodink.......</h1>
     if(error) return <h1>Chtoto posho ne tak</h1>
     return(<div className={c.HomePage}>
-        <div className={c.HomePage__RickAndMorty}>
-            <img src={RickAndMorty} alt={'rickmorty'}/>
-        </div>
         <Container maxWidth={'lg'}>
 
-            <div className={c.HomePage__cards}>
+            <div className={`CardGallery`}>
                 {allEpisodes?.results.map(EpisodeData=>(
                     <EpisodeCard key = {EpisodeData.id}
                                    data={EpisodeData}

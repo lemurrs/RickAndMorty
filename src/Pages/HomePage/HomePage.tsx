@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import { useGetAllCharactersQuery} from "../../store/api/characters";
 import CharacterCard from "../../Components/CharacterCard/CharacterCard";
-import RickAndMorty from '../../Assets/imgs/RickAndMorty.png'
+import '../../Assets/css/CardCss.css'
 import c from './HomePage.module.css'
 import {Button, Container} from "@mui/material";
 
@@ -21,9 +21,6 @@ export function HomePage() {
 
     return (<div className={c.HomePage}>
 
-        <div className={c.HomePage__RickAndMorty}>
-            <img src={RickAndMorty} alt={'rickmorty'}/>
-        </div>
         <Container maxWidth={'lg'}>
             <div className={c.HomePage__filter}>
                 <input type="text" placeholder={'Filter by name...'}
@@ -61,7 +58,7 @@ export function HomePage() {
                     <option value="Unknown">Unknown</option>
                 </select>
             </div>
-            <div className={c.HomePage__cards}>
+            <div className={`CardGallery`}>
                 {error?
                     <h1>No such creatures</h1>:
                     allCharacters?.results.map(characterData => (

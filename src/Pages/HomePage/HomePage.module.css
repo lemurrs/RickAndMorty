@@ -9,16 +9,6 @@ select:focus{
 select{
     cursor: pointer;
 }
-.HomePage__RickAndMorty{
-    text-align: center;
-    margin-bottom: 1.6rem;
-}
-.HomePage__cards{
-    display: grid;
-    grid-template-columns: repeat(4,minmax(min-content,1fr));
-    gap: 2rem;
-    margin-bottom: 4.8rem;
-}
 .HomePage__paginator{
     display: flex;
     justify-content: space-around;
@@ -33,9 +23,6 @@ select{
 .HomePage__filter input:first-child{
 background: url("../../Assets/imgs/Loupe.png") no-repeat scroll 5%;
     padding-left: 5rem;
-
-
-
 }
 
 .HomePage__filter>input,
@@ -53,24 +40,12 @@ background: url("../../Assets/imgs/Loupe.png") no-repeat scroll 5%;
         grid-template-columns: repeat(2,minmax(min-content,1fr));
     }
 }
-@media screen and (max-width: 649px){
-    .HomePage__RickAndMorty img{
-        width: 80%;
-    }
-    .HomePage__cards{
-        grid-template-columns: repeat(3,minmax(min-content,1fr));
-        gap: 1rem;
-    }
-}
 @media screen and (max-width: 440px){
     .HomePage__filter>input{
         font-size: 1.2rem;
     }
     .HomePage__filter input:first-child{
         padding-left: 3rem;
-    }
-    .HomePage__cards{
-        grid-template-columns: 1fr 1fr;
     }
 
 }
