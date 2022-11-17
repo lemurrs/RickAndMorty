@@ -5,11 +5,11 @@ import {Button, Container} from "@mui/material";
 import {useGetAllEpisodesQuery} from "../../store/api/characters";
 import EpisodeCard from "../../Components/EpisodeCard/EpisodeCard";
 
-const EpisodePage = ()=>{
+export function EpisodePage(){
     let [page,setPage]=useState(1)
     const {data: allEpisodes, isLoading, error} = useGetAllEpisodesQuery(page)
-    if(isLoading) return <h1>Lodink.......</h1>
-    if(error) return <h1>Chtoto posho ne tak</h1>
+    if (isLoading) return <h1>Loading data...</h1>
+    if(error) return <h1>Something wrong</h1>
     return(<div className={c.HomePage}>
         <Container maxWidth={'lg'}>
 

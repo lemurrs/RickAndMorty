@@ -6,7 +6,7 @@ import c from './HomePage.module.css'
 import {Button, Container} from "@mui/material";
 
 
-export function HomePage() {
+export function HomePage () {
 
     let [page, setPage] = useState(1)
     let [inputName, setInputName] = useState('')
@@ -14,10 +14,9 @@ export function HomePage() {
     let [inputGender, setInputGender] = useState('')
     let [inputStatus, setInputStatus] = useState('')
 
-    const {data: allCharacters, isLoading, error} = useGetAllCharactersQuery([inputName,inputSpecies,inputGender,inputStatus,page])
+        const {data: allCharacters, isLoading, error} = useGetAllCharactersQuery([inputName,inputSpecies,inputGender,inputStatus,page])
 
     if (isLoading) return <h1>Loading data...</h1>
-
 
     return (<div className={c.HomePage}>
 
@@ -68,12 +67,12 @@ export function HomePage() {
                 }
             </div>
             <div className={c.HomePage__paginator}>
-                {page > 1 &&
+                {allCharacters?.info.prev && !error &&
                     <Button variant="contained" size={'large'} sx={{fontSize: '2rem', fontFamily: 'RickMorty',}}
                             onClick={() => {
                                 setPage(--page)
                             }}>Prev</Button>}
-                {page < 42 &&
+                {allCharacters?.info.next && !error &&
                     <Button variant="contained" size={'large'} sx={{fontSize: '2rem', fontFamily: 'RickMorty'}}
                             onClick={() => {
                                 setPage(++page)

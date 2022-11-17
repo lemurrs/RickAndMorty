@@ -5,11 +5,11 @@ import {Button, Container} from "@mui/material";
 import {useGetAllLocationsQuery} from "../../store/api/characters";
 import LocationCard from "../../Components/LocationCard/LocationCard";
 
-const LocationPage = ()=>{
+export function LocationPage(){
     let [page,setPage]=useState(1)
     const {data: allLocations, isLoading, error} = useGetAllLocationsQuery(page)
-    if(isLoading) return <h1>Lodink.......</h1>
-    if(error) return <h1>Chtoto posho ne tak</h1>
+    if (isLoading) return <h1>Loading data...</h1>
+    if(error) return <h1>Something wrong</h1>
     return(<div className={c.LocationPage}>
         <Container maxWidth={'lg'}>
             <div className={`CardGallery ${c.LocationCards}`}>
@@ -28,5 +28,3 @@ const LocationPage = ()=>{
 }
 
 
-
-export default LocationPage
