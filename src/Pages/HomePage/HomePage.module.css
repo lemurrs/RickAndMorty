@@ -1,7 +1,13 @@
 input:focus,
-input:active{
+input:active,
+select:active,
+select:focus{
     border: none;
     outline: none;
+}
+
+select{
+    cursor: pointer;
 }
 .HomePage__RickAndMorty{
     text-align: center;
@@ -32,7 +38,8 @@ background: url("../../Assets/imgs/Loupe.png") no-repeat scroll 5%;
 
 }
 
-.HomePage__filter>input{
+.HomePage__filter>input,
+.HomePage__filter>select{
     font-size: 1.6rem;
     padding-left: 1.4rem;
     height: 5.6rem;

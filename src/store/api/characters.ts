@@ -6,8 +6,17 @@ export const charactersApi = createApi({
     reducerPath: 'charactersApi',
     baseQuery: fetchBaseQuery({baseUrl: BASE_URL}),
     endpoints:(builder)=>({
-        getAllCharacters:builder.query<IAllCharacters,number | null | undefined >({
-            query:(p)=>`/character/?page=${p}`,
+        getAllCharacters:builder.query<IAllCharacters,[string | undefined,string | undefined,string | undefined,string | undefined,number]>({
+            query:([Name,species,gender,status,page])=>({
+                url:`/character/`,
+                params:{
+                    name:Name,
+                    species:species,
+                    gender:gender,
+                    status:status,
+                    page:page
+                }
+            }),
         }),
         getCharacterDetailById:builder.query<ICharacter,number | null>({
             query:(id)=>`/character/${id}`

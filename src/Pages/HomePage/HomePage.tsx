@@ -5,6 +5,7 @@ import RickAndMorty from '../../Assets/imgs/RickAndMorty.png'
 import c from './HomePage.module.css'
 import {Button, Container} from "@mui/material";
 
+
 export function HomePage() {
 
     let [page, setPage] = useState(1)
@@ -13,16 +14,10 @@ export function HomePage() {
     let [inputGender, setInputGender] = useState('')
     let [inputStatus, setInputStatus] = useState('')
 
-    const {data: allCharacters, isLoading, error} = useGetAllCharactersQuery(page)
+    const {data: allCharacters, isLoading, error} = useGetAllCharactersQuery([inputName,inputSpecies,inputGender,inputStatus,page])
 
     if (isLoading) return <h1>Loading data...</h1>
-    if (error) return <h1>Something wrong</h1>
 
-    let finalFilter = allCharacters?.results
-        if (inputName) finalFilter =finalFilter?.filter(el => el.name.toLowerCase().includes(inputName.toLowerCase()))
-        if (inputSpecies) finalFilter =finalFilter?.filter(el => el.species.toLowerCase().includes(inputSpecies.toLowerCase()))
-        if (inputGender) finalFilter = finalFilter?.filter(el => el.gender.toLowerCase()===inputGender.toLowerCase())
-        if (inputStatus) finalFilter = finalFilter?.filter(el => el.status.toLowerCase().includes(inputStatus.toLowerCase()));
 
     return (<div className={c.HomePage}>
 
@@ -30,27 +25,45 @@ export function HomePage() {
             <img src={RickAndMorty} alt={'rickmorty'}/>
         </div>
         <Container maxWidth={'lg'}>
-
             <div className={c.HomePage__filter}>
                 <input type="text" placeholder={'Filter by name...'}
                        onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
                            setInputName(e.target.value);
                        }} value={inputName}/>
-                <input type="text" placeholder={'Species'} onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-                    setInputSpecies(e.target.value);
-                }} value={inputSpecies}/>
-                <input type="text" placeholder={'Gender'} onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-                    setInputGender(e.target.value);
-                }} value={inputGender}/>
-                <input type="text" placeholder={'Status'} onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-                    setInputStatus(e.target.value);
-                }} value={inputStatus}/>
+
+                <select onChange={(e:React.ChangeEvent<HTMLSelectElement>)=>{setInputSpecies(e.target.value)}} name="Species" id="Species-select">
+                    <option value="">Species</option>
+                    <option value="Human">Human</option>
+                    <option value="Alien">Alien</option>
+                    <option value="Unknown">Unknown</option>
+                    <option value="Poopybutthole">Poopybutthole</option>
+                    <option value="Mythological Creature">Mythological Creature</option>
+                    <option value="Humanoid">Humanoid</option>
+                    <option value="Robot">Robot</option>
+                    <option value="Animal">Animal</option>
+                    <option value="Cronenberg">Cronenberg</option>
+                    <option value="Disease">Disease</option>
+                </select>
+
+                <select onChange={(e:React.ChangeEvent<HTMLSelectElement>)=>{setInputGender(e.target.value)}} name="gender" id="gender-select">
+                    <option value="">Gender</option>
+                    <option value="Female">Female</option>
+                    <option value="Male">Male</option>
+                    <option value="Male">Unknown</option>
+                    <option value="Genderless">Genderless</option>
+                </select>
+
+
+                <select onChange={(e:React.ChangeEvent<HTMLSelectElement>)=>{setInputStatus(e.target.value)}} name="status" id="status-select" placeholder={'Choose status'}>
+                    <option value="">Status</option>
+                    <option value="Alive">Alive</option>
+                    <option value="Dead">Dead</option>
+                    <option value="Unknown">Unknown</option>
+                </select>
             </div>
             <div className={c.HomePage__cards}>
-                {finalFilter ? finalFilter?.map(characterData => (
-                        <CharacterCard key={characterData.id}
-                                       data={characterData}
-                        />)) :
+                {error?
+                    <h1>No such creatures</h1>:
                     allCharacters?.results.map(characterData => (
                         <CharacterCard key={characterData.id}
                                        data={characterData}
