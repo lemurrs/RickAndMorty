@@ -49,7 +49,7 @@ export function HomePage() {
                     <option value="">Gender</option>
                     <option value="Female">Female</option>
                     <option value="Male">Male</option>
-                    <option value="Male">Unknown</option>
+                    <option value="Unknown">Unknown</option>
                     <option value="Genderless">Genderless</option>
                 </select>
 
