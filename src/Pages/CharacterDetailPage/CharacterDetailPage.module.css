@@ -63,3 +63,28 @@ grid-column: 2/3;
 color: var(--RobotoTitleColor);
     margin: 0;
 }
+@media screen and (max-width: 526px){
+.Card__mainInfo>img{
+    width: 200px
+
+}
+    .Card__BackButton{
+        text-indent: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+    .mainInfo__title{
+        font-size: 3rem;
+    }
+    .Card__extraInfo{
+        grid-template-columns: 1fr 1fr
+    }
+    .extraInfo__informations{
+        grid-column: 1/2;
+
+    }
+    .extraInfo__episodes{
+        grid-column: 2/3;
+
+    }
+}

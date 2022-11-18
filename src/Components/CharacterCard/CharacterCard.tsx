@@ -14,4 +14,4 @@ const CharacterCard= ({data}:{data:ICharacter})=>{
         </div>
     </div>)
 }
-export default CharacterCard
+export default React.memo(CharacterCard)

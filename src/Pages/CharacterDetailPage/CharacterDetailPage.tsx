@@ -30,7 +30,7 @@ export function CharacterDetailPage() {
                 <div className={c.Card__info}>
                     <div className={c.Card__mainInfo}>
                         <img src={Data.image} alt={'sd'}/>
-                        <p>{Data.name} </p>
+                        <p className={c.mainInfo__title}>{Data.name} </p>
                     </div>
                     <div className={c.Card__extraInfo}>
                         <div className={c.extraInfo__informations}>
