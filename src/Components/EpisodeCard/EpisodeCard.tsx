@@ -9,4 +9,4 @@ const EpisodeCard= ({data}:{data:any})=>{
         </div>
     </div>)
 }
-export default EpisodeCard
+export default React.memo(EpisodeCard)

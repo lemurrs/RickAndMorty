@@ -6,12 +6,14 @@ import {Container} from "@mui/material";
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import Brightness1RoundedIcon from '@mui/icons-material/Brightness1Rounded';
 import AllEpisodes from "./AllEpisodes/AllEpisodes";
+
 export function CharacterDetailPage() {
     const {id} = useParams()
     const navigate = useNavigate();
     const {data: Data, isLoading, error} = useGetCharacterDetailByIdQuery(Number(id) || null)
-    if (isLoading) return <h1>Lodink.......</h1>
-    if (error) return <h1>Chtoto posho ne tak</h1>
+
+    if (isLoading) return <h1>Loading data...</h1>
+    if (error) return <h1>Something wrong</h1>
     if (!Data) return <h1>Empty Data</h1>
 
     //Status Circle Color Logic

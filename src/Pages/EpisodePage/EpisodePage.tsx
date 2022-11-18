@@ -5,31 +5,38 @@ import {Button, Container} from "@mui/material";
 import {useGetAllEpisodesQuery} from "../../store/api/characters";
 import EpisodeCard from "../../Components/EpisodeCard/EpisodeCard";
 
-export function EpisodePage(){
-    let [page,setPage]=useState(1)
+export function EpisodePage() {
+    let [page, setPage] = useState(1)
     const {data: allEpisodes, isLoading, error} = useGetAllEpisodesQuery(page)
     if (isLoading) return <h1>Loading data...</h1>
-    if(error) return <h1>Something wrong</h1>
-    return(<div className={c.HomePage}>
+    if (error) return <h1>Something wrong</h1>
+    return (<div className={c.EpisodePage}>
         <Container maxWidth={'lg'}>
 
             <div className={`CardGallery`}>
-                {allEpisodes?.results.map(EpisodeData=>(
-                    <EpisodeCard key = {EpisodeData.id}
-                                   data={EpisodeData}
+                {allEpisodes?.results.map(EpisodeData => (
+                    <EpisodeCard key={EpisodeData.id}
+                                 data={EpisodeData}
                     />
                 ))}
             </div>
-            <div className={c.HomePage__paginator}>
-                {page>1 && <Button variant="contained" size={'large'} sx={{fontSize:'2rem',fontFamily:'RickMorty',}} onClick={()=>{setPage(--page)}}>Prev</Button>}
-                {page<3 && <Button variant="contained" size={'large'} sx={{fontSize:'2rem', fontFamily:'RickMorty'}} onClick={()=>{setPage(++page)}}>Next</Button>}
+            <div className={`PaginatorButtons`}>
+                {allEpisodes?.info.prev && !error &&
+                    <Button variant="contained" size={'large'} sx={{fontSize: '2rem', fontFamily: 'RickMorty',}}
+                            onClick={() => {
+                                setPage(--page)
+                            }}>Prev</Button>}
+                {allEpisodes?.info.next && !error &&
+                    <Button variant="contained" size={'large'} sx={{fontSize: '2rem', fontFamily: 'RickMorty'}}
+                            onClick={() => {
+                                setPage(++page)
+                            }}>Next</Button>}
             </div>
 
 
         </Container>
     </div>)
 }
-
 
 
 export default EpisodePage

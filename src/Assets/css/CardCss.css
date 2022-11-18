@@ -9,6 +9,11 @@
     text-align: center;
     margin-bottom: 1.6rem;
 }
+.PaginatorButtons{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 4.4rem;
+}
 
 @media screen and (max-width: 682px){
     .MainImage img{

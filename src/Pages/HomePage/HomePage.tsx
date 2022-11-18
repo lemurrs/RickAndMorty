@@ -1,20 +1,24 @@
 import React, {useState} from "react";
-import { useGetAllCharactersQuery} from "../../store/api/characters";
+import {useGetAllCharactersQuery} from "../../store/api/characters";
 import CharacterCard from "../../Components/CharacterCard/CharacterCard";
 import '../../Assets/css/CardCss.css'
 import c from './HomePage.module.css'
 import {Button, Container} from "@mui/material";
 
 
-export function HomePage () {
+export function HomePage() {
 
     let [page, setPage] = useState(1)
     let [inputName, setInputName] = useState('')
     let [inputSpecies, setInputSpecies] = useState('')
     let [inputGender, setInputGender] = useState('')
     let [inputStatus, setInputStatus] = useState('')
+    const {
+        data: allCharacters,
+        isLoading,
+        error
 
-        const {data: allCharacters, isLoading, error} = useGetAllCharactersQuery([inputName,inputSpecies,inputGender,inputStatus,page])
+    } = useGetAllCharactersQuery([inputName, inputSpecies, inputGender, inputStatus, page])
 
     if (isLoading) return <h1>Loading data...</h1>
 
@@ -27,7 +31,9 @@ export function HomePage () {
                            setInputName(e.target.value);
                        }} value={inputName}/>
 
-                <select onChange={(e:React.ChangeEvent<HTMLSelectElement>)=>{setInputSpecies(e.target.value)}} name="Species" id="Species-select">
+                <select onChange={(e: React.ChangeEvent<HTMLSelectElement>) => {
+                    setInputSpecies(e.target.value)
+                }} name="Species" id="Species-select">
                     <option value="">Species</option>
                     <option value="Human">Human</option>
                     <option value="Alien">Alien</option>
@@ -41,7 +47,9 @@ export function HomePage () {
                     <option value="Disease">Disease</option>
                 </select>
 
-                <select onChange={(e:React.ChangeEvent<HTMLSelectElement>)=>{setInputGender(e.target.value)}} name="gender" id="gender-select">
+                <select onChange={(e: React.ChangeEvent<HTMLSelectElement>) => {
+                    setInputGender(e.target.value)
+                }} name="gender" id="gender-select">
                     <option value="">Gender</option>
                     <option value="Female">Female</option>
                     <option value="Male">Male</option>
@@ -50,7 +58,9 @@ export function HomePage () {
                 </select>
 
 
-                <select onChange={(e:React.ChangeEvent<HTMLSelectElement>)=>{setInputStatus(e.target.value)}} name="status" id="status-select" placeholder={'Choose status'}>
+                <select onChange={(e: React.ChangeEvent<HTMLSelectElement>) => {
+                    setInputStatus(e.target.value)
+                }} name="status" id="status-select" placeholder={'Choose status'}>
                     <option value="">Status</option>
                     <option value="Alive">Alive</option>
                     <option value="Dead">Dead</option>
@@ -58,15 +68,15 @@ export function HomePage () {
                 </select>
             </div>
             <div className={`CardGallery`}>
-                {error?
-                    <h1>No such creatures</h1>:
+                {error ?
+                    <h1>No such creatures</h1> :
                     allCharacters?.results.map(characterData => (
                         <CharacterCard key={characterData.id}
                                        data={characterData}
                         />))
                 }
             </div>
-            <div className={c.HomePage__paginator}>
+            <div className={`PaginatorButtons`}>
                 {allCharacters?.info.prev && !error &&
                     <Button variant="contained" size={'large'} sx={{fontSize: '2rem', fontFamily: 'RickMorty',}}
                             onClick={() => {
