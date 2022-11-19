@@ -28,7 +28,7 @@ function App() {
             <div className={`MainImage`}>
                 <img src={RickAndMorty} alt={'rickmorty'}/>
             </div>
-            <React.Suspense fallback={<h2>Loading...</h2>}>
+            <React.Suspense>
                 <Routes>
                     <Route path={'/'} element={<HomePage/>}/>
                     <Route path={'/characters'} element={<HomePage/>}/>

@@ -17,10 +17,8 @@ export function HomePage() {
         data: allCharacters,
         isLoading,
         error
-
     } = useGetAllCharactersQuery([inputName, inputSpecies, inputGender, inputStatus, page])
 
-    if (isLoading) return <h1>Loading data...</h1>
 
     return (<div className={c.HomePage}>
 
@@ -29,10 +27,12 @@ export function HomePage() {
                 <input type="text" placeholder={'Filter by name...'}
                        onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
                            setInputName(e.target.value);
+                           setPage(0)
                        }} value={inputName}/>
 
                 <select onChange={(e: React.ChangeEvent<HTMLSelectElement>) => {
                     setInputSpecies(e.target.value)
+                    setPage(0)
                 }} name="Species" id="Species-select">
                     <option value="">Species</option>
                     <option value="Human">Human</option>
@@ -49,6 +49,7 @@ export function HomePage() {
 
                 <select onChange={(e: React.ChangeEvent<HTMLSelectElement>) => {
                     setInputGender(e.target.value)
+                    setPage(0)
                 }} name="gender" id="gender-select">
                     <option value="">Gender</option>
                     <option value="Female">Female</option>
@@ -60,6 +61,7 @@ export function HomePage() {
 
                 <select onChange={(e: React.ChangeEvent<HTMLSelectElement>) => {
                     setInputStatus(e.target.value)
+                    setPage(0)
                 }} name="status" id="status-select" placeholder={'Choose status'}>
                     <option value="">Status</option>
                     <option value="Alive">Alive</option>
