@@ -2,8 +2,10 @@ import React, {lazy} from 'react';
 import Header from './Components/Header/Header'
 import {Routes, Route} from "react-router-dom";
 import Footer from "./Components/Footer/Footer";
-import "./Assets/css/CardCss.css";
+import "./Assets/css/GeneralCss.css";
 import RickAndMorty from "./Assets/imgs/RickAndMorty.png";
+import LocationDetailPage from "./Pages/LocationDetailPage/LocationDetailPage";
+import EpisodeDetailPage from "./Pages/EpisodeDetailPage/EpisodeDetailPage";
 
 const HomePage = lazy(() =>
     import('./Pages/HomePage/HomePage')
@@ -34,7 +36,9 @@ function App() {
                     <Route path={'/characters'} element={<HomePage/>}/>
                     <Route path={'/character/:id'} element={<CharacterDetailPage/>}/>
                     <Route path={'/locations/'} element={<LocationPage/>}/>
+                    <Route path={'/location/:id'} element={<LocationDetailPage/>}/>
                     <Route path={'/episodes/'} element={<EpisodePage/>}/>
+                    <Route path={'/episode/:id'} element={<EpisodeDetailPage/>}/>
                     <Route path={'*'} element={<p>40000000000000000000004</p>}/>
                 </Routes>
             </React.Suspense>

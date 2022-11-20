@@ -36,10 +36,9 @@ export interface IAllCharacters {
         created: Date;
     }
 
-
 export interface IAllEpisodes {
     info: EInfo;
-    results: EEpisode[];
+    results: IEpisode[];
 }
 export interface EInfo {
     count: number;
@@ -48,7 +47,7 @@ export interface EInfo {
     prev?: any;
 }
 
-export interface EEpisode {
+export interface IEpisode {
     id: number;
     name: string;
     air_date: string;
@@ -81,7 +80,6 @@ export interface EEpisode {
         info: Info;
         results: ILocation[];
     }
-
 
 
 

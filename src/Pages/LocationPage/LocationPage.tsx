@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import '../../Assets/css/CardCss.css'
+import '../../Assets/css/GeneralCss.css'
 import c from './LocationPage.module.css'
 import {Button, Container} from "@mui/material";
 import {useGetAllLocationsQuery} from "../../store/api/characters";
@@ -15,6 +15,7 @@ export function LocationPage() {
                     <LocationCard key={locationData.id}
                                   data={locationData}
                     />
+
                 ))}
             </div>
             <div className={`PaginatorButtons`}>

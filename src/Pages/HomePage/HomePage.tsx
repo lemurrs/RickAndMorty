@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import {useGetAllCharactersQuery} from "../../store/api/characters";
 import CharacterCard from "../../Components/CharacterCard/CharacterCard";
-import '../../Assets/css/CardCss.css'
+import '../../Assets/css/GeneralCss.css'
 import c from './HomePage.module.css'
 import {Button, Container} from "@mui/material";
 
@@ -18,8 +18,7 @@ export function HomePage() {
         isLoading,
         error
     } = useGetAllCharactersQuery([inputName, inputSpecies, inputGender, inputStatus, page])
-
-
+    console.log(allCharacters)
     return (<div className={c.HomePage}>
 
         <Container maxWidth={'lg'}>

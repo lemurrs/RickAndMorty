@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import '../../Assets/css/CardCss.css'
+import '../../Assets/css/GeneralCss.css'
 import c from '../HomePage/HomePage.module.css'
 import {Button, Container} from "@mui/material";
 import {useGetAllEpisodesQuery} from "../../store/api/characters";

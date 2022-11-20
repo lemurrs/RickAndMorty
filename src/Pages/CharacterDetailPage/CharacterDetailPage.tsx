@@ -10,7 +10,8 @@ import AllEpisodes from "./AllEpisodes/AllEpisodes";
 export function CharacterDetailPage() {
     const {id} = useParams()
     const navigate = useNavigate();
-    const {data: Data, isLoading, error} = useGetCharacterDetailByIdQuery(Number(id))
+   const {data: Data, isLoading, error} = useGetCharacterDetailByIdQuery(Number(id))
+
 
     if (isLoading) return <h1>Loading data...</h1>
     if (error) return <h1>Something wrong</h1>
