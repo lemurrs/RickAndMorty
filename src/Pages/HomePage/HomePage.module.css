@@ -23,6 +23,9 @@ select{
 .HomePage__filter input:first-child{
 background: url("../../Assets/imgs/Loupe.png") no-repeat scroll 5%;
     padding-left: 5rem;
+    overflow:hidden;
+    white-space:nowrap;
+    text-overflow: ellipsis;
 }
 
 .HomePage__filter>input,

@@ -37,7 +37,7 @@
     font-weight: 500;
     font-size: 2rem;
 }
-.extraInfo__informations{
+.extraInfo__information{
 grid-column: 2/3;
 }
 
@@ -79,7 +79,7 @@ color: var(--RobotoTitleColor);
     .Card__extraInfo{
         grid-template-columns: 1fr 1fr
     }
-    .extraInfo__informations{
+    .extraInfo__information{
         grid-column: 1/2;
 
     }

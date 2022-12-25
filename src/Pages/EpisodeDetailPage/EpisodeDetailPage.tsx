@@ -6,7 +6,6 @@ import {
 } from "../../store/api/characters";
 import {Container} from "@mui/material";
 import CharacterCard from "../../Components/CharacterCard/CharacterCard";
-import c from "../LocationDetailPage/LocationDetailPage.module.css";
 import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 function EpisodeDetailPage(){
     const {id} = useParams()

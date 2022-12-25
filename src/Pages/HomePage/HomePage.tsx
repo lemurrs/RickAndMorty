@@ -15,10 +15,8 @@ export function HomePage() {
     let [inputStatus, setInputStatus] = useState('')
     const {
         data: allCharacters,
-        isLoading,
         error
     } = useGetAllCharactersQuery([inputName, inputSpecies, inputGender, inputStatus, page])
-    console.log(allCharacters)
     return (<div className={c.HomePage}>
 
         <Container maxWidth={'lg'}>

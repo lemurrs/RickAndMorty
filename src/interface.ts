@@ -1,22 +1,22 @@
 
 export interface IAllCharacters {
-    info: IInfo;
+    info: CharacterInfo;
     results: ICharacter[];
 }
 
-    export interface IInfo {
+    export interface CharacterInfo {
         count: number;
         pages: number;
         next: string;
         prev?: any;
     }
 
-    export interface IOrigin {
+    export interface CharacterOrigin {
         name: string;
         url: string;
     }
 
-    export interface ILocation {
+    export interface CharacterLocation {
         name: string;
         url: string;
     }
@@ -28,8 +28,8 @@ export interface IAllCharacters {
         species: string;
         type: string;
         gender: string;
-        origin: IOrigin;
-        location: ILocation;
+        origin: CharacterOrigin;
+        location: CharacterLocation;
         image: string;
         episode: string[];
         url: string;
@@ -37,10 +37,10 @@ export interface IAllCharacters {
     }
 
 export interface IAllEpisodes {
-    info: EInfo;
+    info: EpisodeInfo;
     results: IEpisode[];
 }
-export interface EInfo {
+export interface EpisodeInfo {
     count: number;
     pages: number;
     next: string;
@@ -57,9 +57,7 @@ export interface IEpisode {
     created: Date;
 }
 
-
-
-    export interface Info {
+    export interface LocationInfo {
         count: number;
         pages: number;
         next: string;
@@ -77,7 +75,7 @@ export interface IEpisode {
     }
 
     export interface IAllLocations {
-        info: Info;
+        info: LocationInfo;
         results: ILocation[];
     }
 

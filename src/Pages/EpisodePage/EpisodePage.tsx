@@ -7,7 +7,7 @@ import EpisodeCard from "../../Components/EpisodeCard/EpisodeCard";
 
 export function EpisodePage() {
     let [page, setPage] = useState(1)
-    const {data: allEpisodes, isLoading, error} = useGetAllEpisodesQuery(page)
+    const {data: allEpisodes, error} = useGetAllEpisodesQuery(page)
     return (<div className={c.EpisodePage}>
         <Container maxWidth={'lg'}>
 

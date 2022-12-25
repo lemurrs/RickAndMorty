@@ -36,8 +36,8 @@ export function CharacterDetailPage() {
                         <p className={c.mainInfo__title}>{Data.name} </p>
                     </div>
                     <div className={c.Card__extraInfo}>
-                        <div className={c.extraInfo__informations}>
-                            <h3>Informations</h3>
+                        <div className={c.extraInfo__information}>
+                            <h3>Information</h3>
                             <p><b>Gender</b> <br/> {Data.gender} </p>
                             <p><b>Status </b>{isAlive}<br/>{Data.status}</p>
                             <p><b>Specie</b> <br/>{Data.species} </p>

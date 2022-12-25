@@ -7,7 +7,7 @@ import LocationCard from "../../Components/LocationCard/LocationCard";
 
 export function LocationPage() {
     let [page, setPage] = useState(1)
-    const {data: allLocations, isLoading, error} = useGetAllLocationsQuery(page)
+    const {data: allLocations, error} = useGetAllLocationsQuery(page)
     return (<div className={c.LocationPage}>
         <Container maxWidth={'lg'}>
             <div className={`CardGallery ${c.LocationCards}`}>
